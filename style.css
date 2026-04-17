@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #eef2f7;
+}
+
+header {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+form {
+    background: white;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #0072ff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.expense {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
