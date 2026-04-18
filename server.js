@@ -6,6 +6,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("API de gestion de dépenses OK 👍");
+});
+
 let depenses = [];
 
 app.post("/depenses", (req, res) => {
@@ -30,8 +34,12 @@ app.get("/total", (req, res) => {
     res.json({ total });
 });
 
+
 const PORT = process.env.PORT || 3000;
+
+console.log("PORT détecté =", PORT);
 
 app.listen(PORT, () => {
     console.log("Serveur lancé sur port " + PORT);
 });
+
