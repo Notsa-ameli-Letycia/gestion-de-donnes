@@ -1,8 +1,10 @@
+const API_URL = "https://gestion-de-donnes-git-main-notsa-ameli-letycias-projects.vercel.app";
+
 const form = document.getElementById("formDepense");
 const liste = document.getElementById("liste");
 
 async function charger() {
-    const res = await fetch("http://localhost:3000/depenses");
+    const res = await fetch(`${API_URL}/depenses`);
     const data = await res.json();
 
     liste.innerHTML = "";
@@ -10,7 +12,6 @@ async function charger() {
     let total = 0;
 
     data.forEach(d => {
-
         total += d.montant;
 
         const div = document.createElement("div");
@@ -36,13 +37,13 @@ form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const depense = {
-        categorie: categorie.value,
-        montant: montant.value,
-        date: date.value,
-        description: description.value
+        categorie: document.getElementById("categorie").value,
+        montant: document.getElementById("montant").value,
+        date: document.getElementById("date").value,
+        description: document.getElementById("description").value
     };
 
-    await fetch("http://localhost:3000/depenses", {
+    await fetch(`${API_URL}/depenses`, {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(depense)

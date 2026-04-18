@@ -1,3 +1,4 @@
+
 const express = require("express");
 const cors = require("cors");
 
@@ -6,12 +7,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 🌐 route test
 app.get("/", (req, res) => {
     res.send("API de gestion de dépenses OK 👍");
 });
 
 let depenses = [];
 
+// ➕ ajouter dépense
 app.post("/depenses", (req, res) => {
     const depense = {
         id: Date.now(),
@@ -25,19 +28,19 @@ app.post("/depenses", (req, res) => {
     res.json(depense);
 });
 
+// 📥 liste
 app.get("/depenses", (req, res) => {
     res.json(depenses);
 });
 
+// 💰 total
 app.get("/total", (req, res) => {
     const total = depenses.reduce((sum, d) => sum + d.montant, 0);
     res.json({ total });
 });
 
-
+// 🚀 port
 const PORT = process.env.PORT || 3000;
-
-console.log("PORT détecté =", PORT);
 
 app.listen(PORT, () => {
     console.log("Serveur lancé sur port " + PORT);

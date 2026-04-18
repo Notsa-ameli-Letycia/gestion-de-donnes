@@ -1,45 +1,37 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Gestion Dépenses Pro</title>
+    <title>Gestion Dépenses</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>💰 Finance Tracker Pro</h1>
+    <h1>Gestion de dépenses</h1>
 </header>
 
-<section class="dashboard">
-
+<div class="dashboard">
     <div class="card">
         <h3>Total</h3>
         <p id="total">0 FCFA</p>
     </div>
 
     <div class="card">
-        <h3>Dépenses</h3>
+        <h3>Nombre</h3>
         <p id="count">0</p>
     </div>
+</div>
 
-</section>
+<form id="formDepense">
+    <input id="categorie" placeholder="Catégorie" required>
+    <input id="montant" type="number" placeholder="Montant" required>
+    <input id="date" type="date" required>
+    <input id="description" placeholder="Description">
+    <button type="submit">Ajouter</button>
+</form>
 
-<section class="form">
-
-    <form id="formDepense">
-        <input id="categorie" placeholder="Catégorie (transport, nourriture...)">
-        <input id="montant" type="number" placeholder="Montant">
-        <input id="date" type="date">
-        <input id="description" placeholder="Description">
-        <button>Ajouter</button>
-    </form>
-
-</section>
-
-<section id="liste"></section>
+<div id="liste"></div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
